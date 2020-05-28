@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/favicon_io"/>
+
+    <title>State and Capital API</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="jumbotron mt-10">
+        <h1 class="display-4">State and Capital API</h1>
+        <p class="lead">This is a sample app that list states and it capitals.</p>
+        <p class="lead">@RequestParam</p>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="https://spring.io/projects/spring-boot" target="_blank" role="button">Learn more</a>
+        <br>
+        <br>
+        <div class="alert alert-primary" role="alert">
+            <b>PUT</b> -  /api/country/
+        </div>
+        <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+            <b>PUT</b> &nbsp;&nbsp; <i class="fa fa-chevron-down fa-lg"></i>
+        </button>
+        <div class="collapse" id="collapseExample3">
+            <div class="card card-body">
+                Updating  a single state <br>
+                @RequestParam = id <br>
+                @RequestParam = state <br>
+                @RequestParam = capital <br>
+            </div>
+        </div>
+        <br>
+
+        <div class="alert alert-success" role="alert">
+            <b>GET - </b> /api/country/
+        </div>
+        <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <b>GET</b> &nbsp;&nbsp; <i class="fa fa-chevron-down fa-lg"></i>
+        </button>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Getting list of all the states and capital
+            </div>
+        </div>
+        <br>
+
+        <div class="alert alert-success" role="alert">
+            <b>GET - </b> /api/country/state/
+        </div>
+        <button class="btn btn-success btn-block" type="button" data-toggle="collapse" data-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+            <b>GET</b> &nbsp;&nbsp; <i class="fa fa-chevron-down fa-lg"></i>
+        </button>
+        <div class="collapse" id="collapseExample5">
+            <div class="card card-body">
+                Getting a single state <br>
+                @RequestParam = id
+            </div>
+        </div>
+        <br>
+
+
+        <div class="alert alert-danger" role="alert">
+            <b>DELETE</b> - /api/country/
+        </div>
+        <button class="btn btn-danger btn-block" type="button" data-toggle="collapse" data-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+            <b>DELETE</b> &nbsp;&nbsp; <i class="fa fa-chevron-down fa-lg"></i>
+        </button>
+
+        <div class="collapse" id="collapseExample4">
+            <div class="card card-body">
+                Deleting a single state <br>
+                @RequestParam = id
+            </div>
+        </div>
+        <br>
+
+        <div class="alert alert-warning" role="alert">
+            <b>POST</b> - /api/country/
+        </div>
+        <button class="btn btn-warning btn-block" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+            <b style="color: white">POST</b> &nbsp;&nbsp; <i style="color: white" class="fa fa-chevron-down fa-lg"></i>
+        </button>
+        <div class="collapse" id="collapseExample2">
+            <div class="card card-body">
+                Adding state <br>
+                @RequestParam = state<br>
+                @RequestParam = capital<br>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div> <!-- /container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+</body>
+</html>

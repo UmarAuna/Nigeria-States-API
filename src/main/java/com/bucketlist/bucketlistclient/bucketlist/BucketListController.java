@@ -1,13 +1,14 @@
-package com.bucketlist.bucketlistclient;
+package com.bucketlist.bucketlistclient.bucketlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class BucketListController {
@@ -32,12 +33,15 @@ public class BucketListController {
     }
 
     @PostMapping(value = "/api/")
-    public ResponseEntity addToBucketList(@RequestParam(value="name") String name, @RequestParam(value="description") String desc) {
+    public ResponseEntity addToBucketList(@Validated @RequestParam(value="name", required = true) String name,
+                                          @Validated  @RequestParam(value="description", required = true) String desc) {
+
         return ResponseEntity.ok(bucketRepository.save(new BucketList(name, desc)));
     }
 
+
     @PutMapping(value = "/api/")
-    public ResponseEntity updateBucketList(@RequestParam(value="name") String name, @RequestParam(value="id") Long id, @RequestParam(value="description") String desc) {
+    public ResponseEntity updateBucketList( @RequestParam(value="name") String name, @RequestParam(value="id") Long id,  @RequestParam(value="description") String desc) {
         Optional<BucketList> optionalBucketList = bucketRepository.findById(id);
         if(!optionalBucketList.isPresent()){
             return ResponseEntity.badRequest().body("No bucket with specified id " + id + " found");
@@ -53,6 +57,6 @@ public class BucketListController {
     @DeleteMapping(value = "/api/")
     public ResponseEntity removeBucketList(@RequestParam(value="id") Long id) {
         bucketRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.badRequest().body("Deleted Successfully");
     }
 }

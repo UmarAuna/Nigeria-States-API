@@ -1,4 +1,4 @@
-package com.bucketlist.bucketlistclient;
+package com.bucketlist.bucketlistclient.bucketlist;
 
 import javax.persistence.*;
 

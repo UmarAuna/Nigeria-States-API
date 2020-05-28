@@ -1,4 +1,4 @@
-package com.bucketlist.bucketlistclient;
+package com.bucketlist.bucketlistclient.bucketlist;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
