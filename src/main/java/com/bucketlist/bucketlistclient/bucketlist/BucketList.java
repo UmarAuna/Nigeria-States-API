@@ -3,6 +3,7 @@ package com.bucketlist.bucketlistclient.bucketlist;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "bucket_list")
 public class BucketList {
 
     @Id

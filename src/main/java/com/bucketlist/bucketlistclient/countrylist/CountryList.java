@@ -3,6 +3,7 @@ package com.bucketlist.bucketlistclient.countrylist;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "country_list")
 public class CountryList {
     @Id
     @Column(name = "id", unique = true, nullable = false)
